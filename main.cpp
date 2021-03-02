@@ -57,6 +57,8 @@ int main() {
    std::cout << "final capacity: " << final.getCapacity() << std::endl;
     final.print();
 
+    int testGet = d1.get_element(5);
+    std::cout << "d1.getElement() returns value: " << testGet << std::endl;
 
     return 0;
 }

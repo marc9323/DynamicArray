@@ -16,10 +16,15 @@ class DynamicArray {
     int size{};
 
 public:
-    DynamicArray() {
+//    DynamicArray() {
+//        data = new int[5];
+//        nextIndex = 0;
+//        capacity = 5;
+//        //size = nextIndex;
+//    }
+
+    DynamicArray():nextIndex{}, capacity(5) {
         data = new int[5];
-        nextIndex = 0;
-        capacity = 5;
     }
 
     DynamicArray(int capacity) {
@@ -84,7 +89,7 @@ public:
         }
     }
 
-    int get(int i) {
+    int get_element(int i) const{
         // peek
         // -1 means invalid index
         if(i >= 0 && i < nextIndex) {
@@ -94,7 +99,7 @@ public:
         }
     }
 
-    void print() {
+    void print() const {
         for(int i = 0; i < nextIndex; i++) {
             std::cout << data[i] << " ";
         }
@@ -102,7 +107,7 @@ public:
         std::cout << std::endl;
     }
 
-    size_t getCapacity() {
+    size_t getCapacity() const {
         return capacity;
     }
 
