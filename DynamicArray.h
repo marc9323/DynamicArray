@@ -22,6 +22,23 @@ public:
         capacity = 5;
     }
 
+    // copy contructor - produce deep copy
+    DynamicArray(DynamicArray const &d) {
+        this->nextIndex = d.nextIndex;
+        this->capacity = d.capacity;
+
+        // this line yields a shallow copy and is
+        // the way the default copy constructor operates
+        // this->data = d.data;
+
+        // deep copy
+        // deep copy procedure:  create new array, copy old values
+        this->data = new int[d.capacity];
+        for(size_t index = 0; index < d.nextIndex; index++) {
+            this->data[index] = d.data[index];
+        }
+    }
+
     void add(int element) {
         if(nextIndex == capacity) {
             int *newData = new int[2 * capacity];
