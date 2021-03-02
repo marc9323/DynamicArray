@@ -69,6 +69,10 @@ public:
         std::cout << std::endl;
     }
 
+    size_t getCapacity() {
+        return capacity;
+    }
+
 };
 
 
