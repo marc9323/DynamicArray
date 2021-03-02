@@ -22,6 +22,12 @@ public:
         capacity = 5;
     }
 
+    DynamicArray(int capacity) {
+        data = new int[capacity];
+        nextIndex = 0;
+        this->capacity = capacity;
+    }
+
     // copy contructor - produce deep copy
     DynamicArray(DynamicArray const &d) {
         this->nextIndex = d.nextIndex;
@@ -33,6 +39,16 @@ public:
 
         // deep copy
         // deep copy procedure:  create new array, copy old values
+        this->data = new int[d.capacity];
+        for(size_t index = 0; index < d.nextIndex; index++) {
+            this->data[index] = d.data[index];
+        }
+    }
+
+    void operator=(DynamicArray const &d) {
+        this->nextIndex = d.nextIndex;
+        this->capacity = d.capacity;
+
         this->data = new int[d.capacity];
         for(size_t index = 0; index < d.nextIndex; index++) {
             this->data[index] = d.data[index];

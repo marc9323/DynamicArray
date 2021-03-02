@@ -44,5 +44,19 @@ int main() {
     d2.print();
     d3.print();
 
+    d1 = d2;
+    d2 = d3;
+
+    std::cout << " After d1 = d2, d2 = d3: " << std::endl;
+    d1.print();
+    d2.print();
+    d3.print();
+
+    DynamicArray final(22);
+    final.add(1);
+   std::cout << "final capacity: " << final.getCapacity() << std::endl;
+    final.print();
+
+
     return 0;
 }
